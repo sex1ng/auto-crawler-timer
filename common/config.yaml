@@ -29,7 +29,7 @@ email:
     send_list:
 
 # 数据库相关配置
-mysql_db:
+mysql:
     host:
     user:
     password:

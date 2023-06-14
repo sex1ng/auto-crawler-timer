@@ -1,16 +1,42 @@
 {
-    "key1": "value1",
-    "key2": 7,
-    "key3": null,
-    "favFriends": [
-        "Kolade",
-        "Nithya",
-        "Dammy",
-        "Jack"
-    ],
-    "favPlayers": {
-        "one": "Kante",
-        "two": "Hazard",
-        "three": "Didier"
-    }
+    "project_name": "AC",
+    "env": "测试环境",
+    "developer": "zhengsx",
+    "host": "https://blog.imky.ink",
+    "host_secondary": "",
+    "notification_type": 0,
+    "excel_report": false,
+    "ding_talk": {
+        "webhook": "",
+        "secret": ""
+    },
+    "lark": {
+        "webhook": ""
+    },
+    "wechat": {
+        "webhook": ""
+    },
+    "email": {
+        "send_user": "",
+        "email_host": "",
+        "stamp_key": "",
+        "send_list": ""
+    },
+    "mysql": {
+        "host": "",
+        "user": "",
+        "password": "",
+        "port": ""
+    },
+    "sqlite": {
+        "address": ""
+    },
+    "redis": {
+        "host": "",
+        "port": "",
+        "password": "",
+        "decode_responses": "",
+        "db": ""
+    },
+    "mirror_source": "http://mirrors.aliyun.com/pypi/simple/"
 }

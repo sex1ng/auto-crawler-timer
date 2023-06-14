@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<book>
-    <name>Thinking in python 3</name>
-    <author>zhengsx</author>
-    <price>108.00</price>
-    <evaluate>good's book</evaluate>
-</book>
+<root>
+    <project_name>AC</project_name>
+    <env>测试环境</env>
+    <developer>zhengsx</developer>
+    <host>https://blog.imky.ink</host>
+    <host_secondary></host_secondary>
+    <notification_type>0</notification_type>
+    <excel_report>False</excel_report>
+    <ding_talk>
+        <webhook></webhook>
+        <secret></secret>
+    </ding_talk>
+    <lark>
+        <webhook></webhook>
+    </lark>
+    <wechat>
+        <webhook></webhook>
+    </wechat>
+    <email>
+        <send_user></send_user>
+        <email_host></email_host>
+        <stamp_key></stamp_key>
+        <send_list></send_list>
+    </email>
+    <mysql>
+        <host></host>
+        <user></user>
+        <password></password>
+        <port></port>
+    </mysql>
+    <sqlite>
+        <address></address>
+    </sqlite>
+    <redis>
+        <host></host>
+        <port></port>
+        <password></password>
+        <decode_responses></decode_responses>
+        <db></db>
+    </redis>
+    <mirror_source>http://mirrors.aliyun.com/pypi/simple/</mirror_source>
+</root>
