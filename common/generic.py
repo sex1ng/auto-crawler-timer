@@ -1,6 +1,4 @@
 import os
-import datetime
-from typing import Text
 
 
 # 获取项目根路径
@@ -22,11 +20,50 @@ def ensure_path_sep(path: str) -> str:
 
 # 保存爬虫结果
 def save_crawler_result(content: str) -> None:
+    import datetime
+
     path = root_path() + "/file/" + datetime.datetime.now().strftime('%Y-%m-%d')
     document = datetime.datetime.now().strftime('%H:%M:%S') + ".html"
+
     if not os.path.isdir(path):
         os.mkdir(path)
 
     with open(path + "/" + document, "w", encoding = 'utf-8') as f:
         f.write(str(content))
         f.close()
+
+
+# 读取 yaml 文件
+def read_yaml(key = None):
+    import yaml
+
+    with open(root_path() + '/common/config.yaml', 'r') as f:
+        config = yaml.safe_load(f)
+
+    if key is None:
+        return config
+    else:
+        return config[key]
+
+
+# 读取 json 文件
+def read_json(key = None):
+    import json
+
+    with open(root_path() + '/common/config.json', 'r') as f:
+        config = json.load(f)
+
+    if key is None:
+        return config
+    else:
+        return config.get(key)
+
+
+# 读取 xml 文件
+def read_xml(key: str) -> str:
+    import xml.dom.minidom
+
+    dom = xml.dom.minidom.parse(root_path() + '/common/config.xml')
+    value = dom.getElementsByTagName(key)[0].childNodes[0].data
+
+    return value

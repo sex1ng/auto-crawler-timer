@@ -1,0 +1,16 @@
+{
+    "key1": "value1",
+    "key2": 7,
+    "key3": null,
+    "favFriends": [
+        "Kolade",
+        "Nithya",
+        "Dammy",
+        "Jack"
+    ],
+    "favPlayers": {
+        "one": "Kante",
+        "two": "Hazard",
+        "three": "Didier"
+    }
+}
