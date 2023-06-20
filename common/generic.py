@@ -23,18 +23,18 @@ def save_crawler_result(content: str) -> None:
     import datetime
 
     path = root_path() + "/file/" + datetime.datetime.now().strftime('%Y-%m-%d')
-    document = datetime.datetime.now().strftime('%H:%M:%S') + ".html"
+    document = datetime.datetime.now().strftime('%H-%M-%S') + ".html"
 
     if not os.path.isdir(path):
         os.mkdir(path)
 
-    with open(path + "/" + document, "w", encoding = 'utf-8') as f:
+    with open(path + "/" + document, "w", encoding='utf-8') as f:
         f.write(str(content))
         f.close()
 
 
 # 读取 yaml 文件
-def read_yaml(key = None):
+def read_yaml(key=None):
     import yaml
 
     with open(root_path() + '/common/config.yaml', 'r') as f:
@@ -47,7 +47,7 @@ def read_yaml(key = None):
 
 
 # 读取 json 文件
-def read_json(key = None):
+def read_json(key=None):
     import json
 
     with open(root_path() + '/common/config.json', 'r') as f:
@@ -67,3 +67,18 @@ def read_xml(key: str) -> str:
     value = dom.getElementsByTagName(key)[0].childNodes[0].data
 
     return value
+
+
+# 解析 html 文件
+def read_html(path: str, parsing=True) -> str:
+    from lxml import html
+
+    with open(path, 'r') as file:
+        content = file.read()
+
+    if not parsing:
+        return content
+
+    parsed_content = html.fromstring(content)
+
+    return parsed_content
